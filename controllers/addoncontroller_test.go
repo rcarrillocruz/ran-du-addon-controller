@@ -122,7 +122,7 @@ var _ = Describe("Addoncontroller", func() {
 					Expect(ok).To(BeTrue())
 					Expect(clusterRole).NotTo(BeNil())
 					Expect(clusterRole.GetName()).To(Equal(
-						"open-cluster-management:ran-du-product-addon-operatorgroups-aggregate-clusterrole"))
+						"open-cluster-management:openshift-ptp-addon-operatorgroups-aggregate-clusterrole"))
 					Expect(clusterRole.Labels["rbac.authorization.k8s.io/aggregate-to-admin"]).To(Equal("true"))
 					Expect(len(clusterRole.Rules)).To(Equal(1))
 					Expect(clusterRole.Rules[0]).To(Equal(rbacv1.PolicyRule{
@@ -147,7 +147,7 @@ var _ = Describe("Addoncontroller", func() {
 					operatorGroup, ok := ogObj.(*operatorsv1.OperatorGroup)
 					Expect(ok).To(BeTrue())
 					Expect(operatorGroup).NotTo(BeNil())
-					Expect(operatorGroup.GetName()).To(Equal("ran-du-product-operatorgroup"))
+					Expect(operatorGroup.GetName()).To(Equal("openshift-ptp-operatorgroup"))
 					Expect(operatorGroup.GetNamespace()).To(Equal(vsNamespace))
 					Expect(operatorGroup.Spec).To(Equal(operatorsv1.OperatorGroupSpec{}))
 
@@ -158,9 +158,9 @@ var _ = Describe("Addoncontroller", func() {
 					operatorSubscription, ok = subObj.(*operatorsv1alpha1.Subscription)
 					Expect(ok).To(BeTrue())
 					Expect(operatorSubscription).NotTo(BeNil())
-					Expect(operatorSubscription.GetName()).To(Equal("ran-du-product"))
+					Expect(operatorSubscription.GetName()).To(Equal("openshift-ptp"))
 					Expect(operatorSubscription.GetNamespace()).To(Equal(vsNamespace))
-					Expect(operatorSubscription.Spec.Package).To(Equal("ran-du-product")) // This is the "name" in json
+					Expect(operatorSubscription.Spec.Package).To(Equal("openshift-ptp")) // This is the "name" in json
 					// More specific checks done in tests
 				})
 
@@ -322,7 +322,7 @@ var _ = Describe("Addoncontroller", func() {
 					Expect(ok).To(BeTrue())
 					Expect(operatorSubscription).NotTo(BeNil())
 					Expect(operatorSubscription.GetNamespace()).To(Equal(mcAddon.Spec.InstallNamespace))
-					Expect(operatorSubscription.Spec.Package).To(Equal("ran-du-product")) // This is the "name" in json
+					Expect(operatorSubscription.Spec.Package).To(Equal("openshift-ptp")) // This is the "name" in json
 
 					Expect(operatorSubscription.Spec.Channel).To(Equal(controllers.DefaultChannel))
 					Expect(string(operatorSubscription.Spec.InstallPlanApproval)).To(Equal(
