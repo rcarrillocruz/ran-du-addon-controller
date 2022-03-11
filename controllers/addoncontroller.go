@@ -34,7 +34,7 @@ var (
 // Change these values to suit your operator
 const (
 	addonName                      = "ran-du"
-	operatorName                   = "ran-du-product"
+	operatorName                   = "openshift-ptp"
 	addonInstallNamespace          = "ran-du-system" // For RAN DU this is the "suggested namespace" in the CSV
 	globalOperatorInstallNamespace = "openshift-operators"
 
