@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .InstallNamespace }}
 spec:
 {{- if .Channel }}
-  channel: {{ .Channel }}
+  channel: "{{ .Channel }}"
 {{- end}}
   installPlanApproval: {{ .InstallPlanApproval }}
   name: {{ .OperatorName }}

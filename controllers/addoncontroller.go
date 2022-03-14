@@ -34,14 +34,14 @@ var (
 // Change these values to suit your operator
 const (
 	addonName                      = "ran-du"
-	operatorName                   = "openshift-ptp"
-	addonInstallNamespace          = "ran-du-system" // For RAN DU this is the "suggested namespace" in the CSV
+	operatorName                   = "ptp-operator"
+	addonInstallNamespace          = "openshift-ptp" // For RAN DU this is the "suggested namespace" in the CSV
 	globalOperatorInstallNamespace = "openshift-operators"
 
-	// Defaults for ACM-2.5
+	// Defaults for OpenShift stable 4.9
 	DefaultCatalogSource          = "redhat-operators"
 	DefaultCatalogSourceNamespace = "openshift-marketplace"
-	DefaultChannel                = "acm-2.5"
+	DefaultChannel                = "4.9"
 	DefaultStartingCSV            = "" // By defualt no starting CSV - will use the latest in the channel
 	DefaultInstallPlanApproval    = "Automatic"
 )
